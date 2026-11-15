@@ -1,79 +1,44 @@
 // ─────────────────────────────────────────────────────────────
 //  EDIT THIS FILE to change your store name, apps, and prices.
-//  Everything on the site is rendered from this data.
+//  Everything on the home page is rendered from this data.
 // ─────────────────────────────────────────────────────────────
 
 window.SITE = {
   brand: "Another Networking Guy",
-  tagline: "Know exactly what's going on inside your Mac.",
+  tagline: "Diagnostics for the Macs on your network.",
   supportEmail: "support@anothernetworkingguy.com", // set up this mailbox (e.g. iCloud+ custom domain)
-  minMacOS: "macOS 13 Ventura or later",
-  architectures: "Apple silicon & Intel",
+  minMacOS: "macOS 15 Sequoia or later",
+  architectures: "Apple silicon",
   refundDays: 14,
 
-  // Optional bundle offer. Set to null to hide it.
-  bundle: {
-    name: "Complete Toolkit",
-    price: "$39",
-    was: "$56",
-    blurb: "Every app, every update for that major version, one license.",
-    buyUrl: "#", // TODO: checkout link from Lemon Squeezy / Paddle / Gumroad
-  },
+  // Optional bundle offer. Set to null to hide it (shown only when 2+ apps have a price).
+  bundle: null,
 
-  // TODO: replace these placeholder apps with your real ones.
-  // icon: any emoji or a path like "img/diskpulse.png"
+  // icon: any emoji or a path like "img/macdiag-256.png"
+  // status: "available" shows price + Buy/Trial buttons;
+  //         "coming-soon" hides them and shows "Learn more" + "Get notified".
+  // page: optional link to the app's own page.
   apps: [
     {
-      id: "diskpulse",
-      name: "DiskPulse",
-      icon: "💽",
-      summary: "SSD & drive health at a glance.",
+      id: "macdiag",
+      name: "MacDiag",
+      icon: "img/macdiag-256.png",
+      summary: "Wi-Fi diagnostics for managed Mac fleets.",
       description:
-        "Reads SMART data from internal and external drives, tracks wear level, reallocated sectors and temperature, and warns you before a drive fails.",
-      features: ["SMART attribute viewer", "SSD wear & TBW tracking", "Menu bar alerts", "Exportable reports"],
-      price: "$14",
-      version: "1.0",
+        "Records what the Mac saw before, during and after a Wi-Fi drop — signal, roams, gateway and DNS checks, system logs — and saves it as an evidence bundle you can line up with your access point and RADIUS logs.",
+      features: [
+        "Live link view: RSSI, SNR, Tx rate, roams",
+        "Rules that capture bundles automatically",
+        "One-key comments on the same timeline",
+        "Reversible low-level Wi-Fi controls",
+        "Signed .pkg for Mosyle, Jamf and other MDMs",
+      ],
+      status: "coming-soon",
+      page: "macdiag/",
+      price: "",       // TODO: set when pricing is decided, then status: "available"
+      version: "0.1",
       buyUrl: "#",      // TODO: checkout link
-      downloadUrl: "#", // TODO: link to the notarized .dmg (trial or full)
-    },
-    {
-      id: "thermawatch",
-      name: "ThermaWatch",
-      icon: "🌡️",
-      summary: "Live temperatures, fans and power draw.",
-      description:
-        "Monitors CPU/GPU temperatures, fan speeds and package power in real time, with history graphs so you can spot thermal throttling.",
-      features: ["Per-sensor readings", "Fan RPM monitor", "Throttling detection", "History graphs"],
-      price: "$12",
-      version: "1.0",
-      buyUrl: "#",
-      downloadUrl: "#",
-    },
-    {
-      id: "batterylab",
-      name: "BatteryLab",
-      icon: "🔋",
-      summary: "The full story of your MacBook battery.",
-      description:
-        "Shows real capacity versus design capacity, cycle count, cell voltages and charge history, so you know when a battery service is worth it.",
-      features: ["Health & cycle count", "Cell voltage readout", "Charge history", "Adapter details"],
-      price: "$10",
-      version: "1.0",
-      buyUrl: "#",
-      downloadUrl: "#",
-    },
-    {
-      id: "systemreport",
-      name: "SysReport",
-      icon: "🩺",
-      summary: "One-click full hardware report.",
-      description:
-        "Runs a complete hardware check and produces a shareable PDF — handy for repair shops, resale listings, or support tickets.",
-      features: ["Full hardware inventory", "Pass / warn / fail checks", "PDF & JSON export", "Command-line mode"],
-      price: "$20",
-      version: "1.0",
-      buyUrl: "#",
-      downloadUrl: "#",
+      downloadUrl: "#", // TODO: link to the notarized .pkg
     },
   ],
 };

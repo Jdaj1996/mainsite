@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MacDiag — Wi-Fi diagnostics for managed Mac fleets</title>
+  <meta name="description" content="MacDiag records what a Mac saw before, during and after a Wi-Fi problem and saves it as an evidence bundle. For IT teams managing Macs on enterprise Wi-Fi. Coming soon." />
+  <link rel="canonical" href="https://anothernetworkingguy.com/macdiag/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://anothernetworkingguy.com/macdiag/" />
+  <meta property="og:title" content="MacDiag — Wi-Fi diagnostics for managed Mac fleets" />
+  <meta property="og:description" content="See what the Mac saw when the Wi-Fi dropped." />
+  <meta property="og:image" content="https://anothernetworkingguy.com/img/macdiag-256.png" />
+  <link rel="icon" type="image/png" href="../img/macdiag-64.png" />
+  <link rel="stylesheet" href="../styles.css?v=3" />
+  <link rel="stylesheet" href="macdiag.css?v=1" />
+</head>
+<body data-page="macdiag">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="../" class="logo" data-brand>Another Networking Guy</a>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#controls">Controls</a>
+        <a href="#deploy">Deployment</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-small" data-notify href="mailto:support@anothernetworkingguy.com">Get notified</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="md-hero">
+      <div class="wrap md-hero-grid">
+        <div>
+          <div class="md-brand">
+            <img src="../img/macdiag-256.png" width="56" height="56" alt="" />
+            <span>MacDiag</span>
+            <span class="pill">Coming soon</span>
+          </div>
+          <h1>See what the Mac saw when the Wi-Fi dropped.</h1>
+          <p class="lede">MacDiag watches a Mac's Wi-Fi link, connection checks and system logs, and when something goes wrong it saves an evidence bundle — the minutes before, during and after — that you can line up with your access point and RADIUS logs.</p>
+          <div class="hero-cta">
+            <a class="btn" data-notify href="mailto:support@anothernetworkingguy.com">Email me at launch</a>
+            <a class="btn btn-ghost" href="#features">How it works</a>
+          </div>
+          <ul class="badges md-badges">
+            <li>✓ macOS 15 Sequoia or later</li>
+            <li>✓ Apple silicon</li>
+            <li>✓ Signed .pkg for your MDM</li>
+          </ul>
+        </div>
+
+        <!-- Illustrative timeline, built in HTML -->
+        <figure class="md-window" aria-label="Example MacDiag timeline around a Wi-Fi incident">
+          <div class="md-titlebar"><span></span><span></span><span></span><b>Timeline</b></div>
+          <ol class="md-timeline">
+            <li class="k-sample"><time>16:01:42</time><span class="tag">sample</span>RSSI −64 dBm · SNR 31 dB · ch 37 (6 GHz)</li>
+            <li class="k-event"><time>16:01:58</time><span class="tag">event</span><span>Roam <code>…:3a:10</code> → <code>…:7c:42</code></span></li>
+            <li class="k-sample warn"><time>16:02:03</time><span class="tag">sample</span>RSSI −79 dBm · Tx rate 24 Mb/s</li>
+            <li class="k-log"><time>16:02:05</time><span class="tag">log</span>airportd: beacon loss</li>
+            <li class="k-sample bad"><time>16:02:09</time><span class="tag">probe</span>Gateway loss 100% · DNS timeout</li>
+            <li class="k-comment"><time>16:02:11</time><span class="tag">comment</span>“Zoom froze in room 204”</li>
+            <li class="k-action"><time>16:02:11</time><span class="tag">rule</span>Associated but no traffic → bundle captured</li>
+          </ol>
+          <figcaption>Illustration of the kind of timeline MacDiag records.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section alt">
+      <div class="wrap md-narrow">
+        <p class="eyebrow">The problem</p>
+        <h2>“The Wi-Fi was bad in room 204” is hard to act on.</h2>
+        <p class="md-big">Wi-Fi complaints reach IT after the problem has passed, with no timestamp and no detail. Your wireless controller shows the access point's side. The client's side — what signal the Mac had, which access point it was on, whether the gateway or DNS stopped answering — is usually missing. MacDiag fills that gap.</p>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+      <div class="wrap">
+        <p class="eyebrow">What it does</p>
+        <h2>Catch intermittent problems in the act</h2>
+        <p class="section-sub">Everything lands on one timeline with UTC timestamps, so it lines up with your access point, controller and RADIUS records.</p>
+        <div class="md-features">
+          <article class="card">
+            <h3>Live link view</h3>
+            <p>Network, access point (BSSID), channel, band, width and PHY mode, with live charts of RSSI, SNR, Tx rate and probe latency, and a roam ticker. An on-demand scan shows whether a stronger access point for the same network was in range.</p>
+          </article>
+          <article class="card">
+            <h3>Connection checks</h3>
+            <p>Continuous checks against the default gateway, DNS resolvers and internal and external targets you choose — packet loss, latency, jitter and DNS resolution time — so “connected but nothing works” shows up as data.</p>
+          </article>
+          <article class="card">
+            <h3>Always-on history</h3>
+            <p>Sensor samples and Wi-Fi system log lines are kept in a rolling buffer. When something happens, the minutes <em>before</em> it are already recorded — you don't have to be watching.</p>
+          </article>
+          <article class="card">
+            <h3>Rules that capture for you</h3>
+            <p>Built-in rules for disconnects, authentication failures, roam storms, weak signal and “associated but no traffic”. Any metric, event or log pattern can trigger a marker, a bundle or a debug-logging session, with cooldowns and disk quotas.</p>
+          </article>
+          <article class="card">
+            <h3>Comments on the timeline</h3>
+            <p>Press <kbd>⌃⌥⌘M</kbd> anywhere to type a note — “Zoom froze in room 204” — and it's stamped onto the same timeline as the machine data. Notes can also be added after the fact.</p>
+          </article>
+          <article class="card">
+            <h3>Evidence bundles</h3>
+            <p>One folder with a manifest, the timeline window, Wi-Fi snapshots and scan results, a system log extract, and network state: interfaces, routes, DNS, DHCP lease and probe results. Capture by hand, or let a rule do it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bundle anatomy -->
+    <section class="section alt">
+      <div class="wrap md-split">
+        <div>
+          <p class="eyebrow">Evidence bundles</p>
+          <h2>Five minutes before, two minutes after</h2>
+          <p class="muted">A capture covers the last five minutes and keeps recording for two more, then writes everything to a single folder. The manifest records exactly what was collected and why, so a bundle can go to a vendor or into a ticket as-is.</p>
+          <p class="muted">Bundles are kept for 14 days by default under a size quota, oldest first out. Both are adjustable.</p>
+        </div>
+        <pre class="md-tree" aria-label="Bundle folder layout"><code>bundle-20261114T160211Z-<i>host</i>/
+  manifest.json   <i>trigger, rule, OS, hardware</i>
+  timeline.jsonl  <i>samples, events, comments</i>
+  wifi/           <i>link snapshots, scan results</i>
+  logs/           <i>unified log extract</i>
+  net/            <i>ifconfig, routes, DNS, DHCP,
+                  ARP/NDP, probe results</i>
+  pcap/           <i>only if capture is enabled</i></code></pre>
+      </div>
+    </section>
+
+    <!-- Controls -->
+    <section id="controls" class="section">
+      <div class="wrap">
+        <p class="eyebrow">Controls</p>
+        <h2>The Terminal commands you'd otherwise look up</h2>
+        <p class="section-sub">One click each, all logged. Controls that change a setting remember the previous value and offer a revert; some revert automatically on quit or after a timer.</p>
+        <div class="md-controls">
+          <div>
+            <h3>Logging &amp; capture</h3>
+            <ul class="features">
+              <li>Wi-Fi debug logging</li>
+              <li>Raise Wi-Fi log level, auto-revert after 15 min</li>
+              <li>EAPOL / 802.1X verbose logging</li>
+              <li>Packet capture ring (headers only)</li>
+              <li>Wireless Diagnostics archive</li>
+              <li>sysdiagnose</li>
+              <li>networkQuality throughput test</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Radio &amp; association</h3>
+            <ul class="features">
+              <li>Power-cycle Wi-Fi</li>
+              <li>Disassociate without forgetting the network</li>
+              <li>Force a rescan</li>
+              <li>AWDL off, to rule out AirDrop/AirPlay channel hopping</li>
+              <li>Private Wi-Fi address toggle</li>
+            </ul>
+          </div>
+          <div>
+            <h3>IP layer &amp; saved state</h3>
+            <ul class="features">
+              <li>Renew DHCP lease, show the lease packet</li>
+              <li>Flush DNS cache</li>
+              <li>IPv6 off / automatic</li>
+              <li>Temporary DNS server override</li>
+              <li>List and remove preferred networks</li>
+              <li>Show installed Wi-Fi and 802.1X profiles</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Security model -->
+    <section class="section alt">
+      <div class="wrap trust">
+        <div>
+          <h3>A helper that can't be misused</h3>
+          <p>Root-only work runs in a small helper. It never takes a shell string: each request maps to one fixed, allow-listed command with checked arguments, and it verifies the app's code signature on every connection.</p>
+        </div>
+        <div>
+          <h3>Tiered access</h3>
+          <p>Viewing and adding comments need nothing. Controls that change system state, packet capture and sysdiagnose ask for an administrator. You can tighten or loosen each tier per device group with a configuration profile.</p>
+        </div>
+        <div>
+          <h3>Audited and reversible</h3>
+          <p>Every privileged action goes into an audit log — who, when, what and the result. A menu bar indicator shows whenever a capture or debug session is running.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deployment -->
+    <section id="deploy" class="section">
+      <div class="wrap md-split">
+        <div>
+          <p class="eyebrow">Deployment</p>
+          <h2>Built for managed fleets</h2>
+          <p class="muted">Made for schools and organizations that manage their Macs centrally on enterprise Wi-Fi.</p>
+        </div>
+        <ul class="md-checks">
+          <li>One signed, notarized <code>.pkg</code> installs the app and its helper — upload it to Mosyle, Jamf Pro or another MDM.</li>
+          <li>Settings arrive by configuration profile: access tiers, default rules, probe targets, retention and disk quota.</li>
+          <li>Pre-approve the helper with a managed background-items profile so users can't switch it off.</li>
+          <li>Rules are stored as files, so the same set can be shared and pushed to every Mac.</li>
+          <li>One limit to know: macOS only shows a Wi-Fi network's name and access point to apps with Location permission, which each user grants once. Everything else works without it.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Privacy -->
+    <section class="section alt">
+      <div class="wrap md-split">
+        <div>
+          <p class="eyebrow">Privacy</p>
+          <h2>Diagnostics stay on the Mac</h2>
+        </div>
+        <ul class="md-checks">
+          <li>No server, no account, no telemetry. Bundles are local files until someone exports them.</li>
+          <li>Packet capture is off by default, headers-only when on, and needs an administrator.</li>
+          <li>Each bundle's manifest lists exactly what was collected, for your district or company policy review.</li>
+          <li>This website has no analytics or tracking.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="section">
+      <div class="wrap">
+        <p class="eyebrow">Roadmap</p>
+        <h2>Wi-Fi first. More modules to follow.</h2>
+        <p class="section-sub">MacDiag is built as a host for diagnostic modules. Wi-Fi is the first; these are planned, not yet available.</p>
+        <ul class="md-roadmap">
+          <li><b>Hardware health</b> Battery, SSD health and free space, thermal throttling, memory pressure and panic reports.</li>
+          <li><b>Cart Wi-Fi survey</b> Walk a building with a cart of Macs and get findings per room.</li>
+          <li><b>Fleet coverage</b> Opt-in background scans combined into per-access-point statistics.</li>
+          <li><b>More network modules</b> 802.1X/RADIUS client view, wired Ethernet, DNS/DHCP and VPN.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section alt">
+      <div class="wrap faq">
+        <h2>FAQ</h2>
+        <details>
+          <summary>When is it available?</summary>
+          <p>MacDiag is in development and being piloted on IT Macs. <a data-notify href="mailto:support@anothernetworkingguy.com">Email us</a> and we'll let you know when it launches, along with pricing.</p>
+        </details>
+        <details>
+          <summary>Why isn't it in the Mac App Store?</summary>
+          <p>App Store apps are sandboxed, which blocks the privileged helper, system log streaming and the network commands MacDiag relies on. It's distributed directly as a Developer ID–signed, Apple-notarized package instead.</p>
+        </details>
+        <details>
+          <summary>Does it work on Intel Macs or older macOS?</summary>
+          <p>It's built for Apple silicon Macs on macOS 15 Sequoia or later.</p>
+        </details>
+        <details>
+          <summary>Why does it need Location permission?</summary>
+          <p>macOS hides the Wi-Fi network name and access point (SSID and BSSID) from apps without Location permission, and an MDM can't grant it ahead of time. MacDiag explains this on first run. If a user declines, everything except the network name and access point still works.</p>
+        </details>
+        <details>
+          <summary>Does it fix problems automatically?</summary>
+          <p>No. MacDiag observes, records and offers controls; a person decides what to change. Every change is logged and can be reverted.</p>
+        </details>
+        <details>
+          <summary>Can users turn it off or see what it collects?</summary>
+          <p>A menu bar indicator shows whenever a capture or debug session is active, and each bundle's manifest lists what was collected. Whether users can stop the helper is up to your MDM configuration.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section md-cta">
+      <div class="wrap">
+        <img src="../img/macdiag-256.png" width="72" height="72" alt="" />
+        <h2>Want to know when MacDiag launches?</h2>
+        <p class="muted">Launch news and pricing only. Interested in piloting it on your network? Say so in the email.</p>
+        <a class="btn" data-notify href="mailto:support@anothernetworkingguy.com">Get notified</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> <span data-brand>Another Networking Guy</span></span>
+      <nav>
+        <a href="../">All apps</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms &amp; Refunds</a>
+        <a data-email href="mailto:support@anothernetworkingguy.com">Support</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../site.config.js?v=3"></script>
+  <script src="../main.js?v=3"></script>
+  <script>
+    (function () {
+      var email = (window.SITE && window.SITE.supportEmail) || "support@anothernetworkingguy.com";
+      var href = "mailto:" + email + "?subject=" + encodeURIComponent("Notify me: MacDiag");
+      document.querySelectorAll("[data-notify]").forEach(function (el) { el.href = href; });
+    })();
+  </script>
+</body>
+</html>

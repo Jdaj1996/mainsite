@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Another Networking Guy — Mac diagnostic apps</title>
-  <meta name="description" content="Professional diagnostic tools for macOS. Buy once, download directly, notarized by Apple." />
+  <meta name="description" content="Diagnostic tools for Macs on enterprise Wi-Fi, starting with MacDiag. Signed, notarized, and deployable through your MDM." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>" />
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
-<body>
+<body data-page="home">
   <header class="nav">
     <div class="wrap nav-inner">
       <a href="#" class="logo" data-brand>Another Networking Guy</a>
@@ -25,16 +25,16 @@
     <section class="hero">
       <div class="wrap">
         <p class="eyebrow">Diagnostic tools for macOS</p>
-        <h1 data-tagline>Know exactly what's going on inside your Mac.</h1>
-        <p class="lede">Small, fast, native apps that read your hardware's real health data — drives, thermals, battery and more. Buy once, download directly, no subscription.</p>
+        <h1 data-tagline>Diagnostics for the Macs on your network.</h1>
+        <p class="lede">Native macOS tools for the people who run school and business networks. They record what the Mac actually saw, so a vague complaint becomes evidence you can act on.</p>
         <div class="hero-cta">
-          <a href="#apps" class="btn">Browse the apps</a>
-          <a href="#pricing" class="btn btn-ghost">See pricing</a>
+          <a href="macdiag/" class="btn">Meet MacDiag</a>
+          <a href="#apps" class="btn btn-ghost">All apps</a>
         </div>
         <ul class="badges">
           <li>✓ Notarized by Apple</li>
-          <li data-arch>✓ Apple silicon &amp; Intel</li>
-          <li data-minos>✓ macOS 13 Ventura or later</li>
+          <li data-arch>✓ Apple silicon</li>
+          <li data-minos>✓ macOS 15 Sequoia or later</li>
         </ul>
       </div>
     </section>
@@ -42,7 +42,7 @@
     <section id="apps" class="section">
       <div class="wrap">
         <h2>The apps</h2>
-        <p class="section-sub">Each app does one job well. Pick the ones you need.</p>
+        <p class="section-sub">Each app does one job well. More are on the way.</p>
         <div class="grid" id="app-grid"></div>
       </div>
     </section>
@@ -51,7 +51,7 @@
       <div class="wrap trust">
         <div>
           <h3>Why not the App Store?</h3>
-          <p>Real diagnostics need low-level access to sensors and drive data that sandboxed App Store apps aren't allowed. Selling directly lets these apps actually do their job.</p>
+          <p>Real diagnostics need things sandboxed App Store apps aren't allowed: a privileged helper, system log streams, and network commands that need root. Distributing directly lets the apps do their job.</p>
         </div>
         <div>
           <h3>Still safe to install</h3>
@@ -59,7 +59,7 @@
         </div>
         <div>
           <h3>Your data stays local</h3>
-          <p>Nothing is uploaded. Reports are generated on your Mac and only leave it if you choose to share them.</p>
+          <p>Nothing is uploaded. Logs and evidence bundles are written on the Mac and only leave it when someone exports them.</p>
         </div>
       </div>
     </section>
@@ -78,7 +78,7 @@
         <h2>FAQ</h2>
         <details>
           <summary>How do I install an app?</summary>
-          <p>Download the .dmg, open it, and drag the app into your Applications folder. Launch it from there.</p>
+          <p>Each app ships as a signed, notarized installer package. Open it on a single Mac, or upload it to your MDM (Mosyle, Jamf Pro and others) to push it to a fleet.</p>
         </details>
         <details>
           <summary>How does licensing work?</summary>
@@ -93,8 +93,8 @@
           <p>If an app doesn't work for you, email us within <span data-refund>14</span> days for a full refund.</p>
         </details>
         <details>
-          <summary>Why does the app ask for Full Disk Access?</summary>
-          <p>Some readings (like drive SMART data) need extra permission. The app explains exactly what it needs and why, and works with reduced features if you decline.</p>
+          <summary>Why does an app ask for an administrator password?</summary>
+          <p>Some readings and controls need root, so they run through a small helper that only accepts a fixed list of commands. Installing it, and using controls that change system settings, asks for an administrator. Read-only views work without it.</p>
         </details>
         <details>
           <summary>I lost my license key.</summary>
@@ -115,7 +115,7 @@
     </div>
   </footer>
 
-  <script src="site.config.js?v=2"></script>
-  <script src="main.js?v=2"></script>
+  <script src="site.config.js?v=3"></script>
+  <script src="main.js?v=3"></script>
 </body>
 </html>
