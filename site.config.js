@@ -6,7 +6,7 @@
 window.SITE = {
   brand: "Another Networking Guy",
   tagline: "Diagnostics for the Macs on your network.",
-  supportEmail: "support@anothernetworkingguy.com", // set up this mailbox (e.g. iCloud+ custom domain)
+  supportEmail: "support@anothernetworkguy.com", // set up this mailbox (e.g. iCloud+ custom domain)
   minMacOS: "macOS 15 Sequoia or later",
   architectures: "Apple silicon",
   refundDays: 14,
