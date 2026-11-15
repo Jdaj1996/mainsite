@@ -64,6 +64,8 @@
     pricing.hidden = true;
     $('a[href="#pricing"]').forEach((el) => (el.hidden = true));
   }
+  // FAQ entries about licenses, trials and refunds only make sense once something is on sale.
+  $("[data-on-sale]").forEach((el) => (el.hidden = !forSale.length));
 
   // Bundle
   const bundle = document.getElementById("bundle");

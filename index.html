@@ -6,7 +6,7 @@
   <title>Another Networking Guy — Mac diagnostic apps</title>
   <meta name="description" content="Diagnostic tools for Macs on enterprise Wi-Fi, starting with MacDiag. Signed, notarized, and deployable through your MDM." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 <body data-page="home">
   <header class="nav">
@@ -77,18 +77,22 @@
       <div class="wrap faq">
         <h2>FAQ</h2>
         <details>
+          <summary>When can I get MacDiag?</summary>
+          <p>MacDiag is in development. <a href="macdiag/">See what it does</a>, or <a data-email href="mailto:support@anothernetworkingguy.com">email us</a> to hear when it launches.</p>
+        </details>
+        <details>
           <summary>How do I install an app?</summary>
           <p>Each app ships as a signed, notarized installer package. Open it on a single Mac, or upload it to your MDM (Mosyle, Jamf Pro and others) to push it to a fleet.</p>
         </details>
-        <details>
+        <details data-on-sale>
           <summary>How does licensing work?</summary>
           <p>After checkout you'll get an email with your license key and download link. Paste the key into the app's Activate window. You can use it on your own Macs.</p>
         </details>
-        <details>
+        <details data-on-sale>
           <summary>Can I try before I buy?</summary>
           <p>Yes — every download works as a free trial. Buy a license when you're ready to unlock everything.</p>
         </details>
-        <details>
+        <details data-on-sale>
           <summary>What's your refund policy?</summary>
           <p>If an app doesn't work for you, email us within <span data-refund>14</span> days for a full refund.</p>
         </details>
@@ -96,7 +100,7 @@
           <summary>Why does an app ask for an administrator password?</summary>
           <p>Some readings and controls need root, so they run through a small helper that only accepts a fixed list of commands. Installing it, and using controls that change system settings, asks for an administrator. Read-only views work without it.</p>
         </details>
-        <details>
+        <details data-on-sale>
           <summary>I lost my license key.</summary>
           <p>Email <a data-email href="mailto:support@anothernetworkingguy.com">support@anothernetworkingguy.com</a> from the address you bought with and we'll resend it.</p>
         </details>
@@ -109,13 +113,13 @@
       <span>© <span id="year"></span> <span data-brand>Another Networking Guy</span></span>
       <nav>
         <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms &amp; Refunds</a>
+        <a href="terms.html">Terms</a>
         <a data-email href="mailto:support@anothernetworkingguy.com">Support</a>
       </nav>
     </div>
   </footer>
 
-  <script src="site.config.js?v=3"></script>
-  <script src="main.js?v=3"></script>
+  <script src="site.config.js?v=4"></script>
+  <script src="main.js?v=4"></script>
 </body>
 </html>

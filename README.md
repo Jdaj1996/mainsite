@@ -19,7 +19,9 @@ checkout links and download links. Each app has:
 Each app can have its own page in a folder (see `macdiag/index.html`, which reuses `styles.css`
 and adds `macdiag/macdiag.css`). The Pricing section hides itself until an app is on sale.
 
-Also review `privacy.html` and `terms.html` — they're templates.
+`privacy.html` and `terms.html` describe the site as it is now, with nothing on sale. Before selling,
+add license, refund and payment-provider sections to both. FAQ entries marked `data-on-sale` in
+`index.html` (licensing, trials, refunds) stay hidden until an app has `status: "available"` and a price.
 
 ## Preview locally
 
