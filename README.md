@@ -1,0 +1,43 @@
+# mainsite
+
+Storefront for Mac diagnostic apps sold directly (outside the Mac App Store).
+Plain HTML/CSS/JS — no build step.
+
+## Editing
+
+Almost everything lives in **`site.config.js`**: brand name, support email, apps, prices,
+checkout links and download links. Each app has:
+
+| field         | what it is                                                        |
+|---------------|-------------------------------------------------------------------|
+| `icon`        | an emoji, or an image path like `img/diskpulse.png` (512×512 PNG) |
+| `buyUrl`      | checkout link from your payment provider                          |
+| `downloadUrl` | link to the notarized `.dmg`                                      |
+
+Also review `privacy.html` and `terms.html` — they're templates.
+
+## Preview locally
+
+```bash
+python3 -m http.server 8080
+```
+
+Then open http://localhost:8080.
+
+## Selling outside the App Store — checklist
+
+1. **Payments:** use a *merchant of record* (Lemon Squeezy, Paddle, or Gumroad) so they handle
+   sales tax/VAT worldwide. Lemon Squeezy and Paddle also generate **license keys** and have a
+   license-validation API your apps can call. Create one product per app (+ the bundle) and paste
+   each checkout link into `buyUrl`.
+2. **Code signing:** join the Apple Developer Program ($99/yr), sign each app with a
+   **Developer ID Application** certificate, and enable the Hardened Runtime.
+3. **Notarization:** `xcrun notarytool submit App.dmg --keychain-profile <profile> --wait`,
+   then `xcrun stapler staple App.dmg`. Without this, macOS Gatekeeper blocks the app.
+4. **Hosting the DMGs:** GitHub Releases, Cloudflare R2, or your payment provider's file delivery.
+5. **Updates:** add [Sparkle](https://sparkle-project.org) to each app for in-app updates.
+
+## Deploy (GitHub Pages)
+
+Push to `main`, then on GitHub: **Settings → Pages → Deploy from a branch → `main` / root**.
+To use your own domain, add it under Pages and create a `CNAME` DNS record.

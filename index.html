@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Another Networking Guy — Mac diagnostic apps</title>
+  <meta name="description" content="Professional diagnostic tools for macOS. Buy once, download directly, notarized by Apple." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>" />
+  <link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#" class="logo" data-brand>Another Networking Guy</a>
+      <nav>
+        <a href="#apps">Apps</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#apps" class="btn btn-small">Get the apps</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Diagnostic tools for macOS</p>
+        <h1 data-tagline>Know exactly what's going on inside your Mac.</h1>
+        <p class="lede">Small, fast, native apps that read your hardware's real health data — drives, thermals, battery and more. Buy once, download directly, no subscription.</p>
+        <div class="hero-cta">
+          <a href="#apps" class="btn">Browse the apps</a>
+          <a href="#pricing" class="btn btn-ghost">See pricing</a>
+        </div>
+        <ul class="badges">
+          <li>✓ Notarized by Apple</li>
+          <li data-arch>✓ Apple silicon &amp; Intel</li>
+          <li data-minos>✓ macOS 13 Ventura or later</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="apps" class="section">
+      <div class="wrap">
+        <h2>The apps</h2>
+        <p class="section-sub">Each app does one job well. Pick the ones you need.</p>
+        <div class="grid" id="app-grid"></div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="wrap trust">
+        <div>
+          <h3>Why not the App Store?</h3>
+          <p>Real diagnostics need low-level access to sensors and drive data that sandboxed App Store apps aren't allowed. Selling directly lets these apps actually do their job.</p>
+        </div>
+        <div>
+          <h3>Still safe to install</h3>
+          <p>Every build is signed with a Developer ID and notarized by Apple, so macOS verifies it before it ever runs. No warnings, no right-click workarounds.</p>
+        </div>
+        <div>
+          <h3>Your data stays local</h3>
+          <p>Nothing is uploaded. Reports are generated on your Mac and only leave it if you choose to share them.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section">
+      <div class="wrap">
+        <h2>Pricing</h2>
+        <p class="section-sub">One-time purchase. Free updates within the major version.</p>
+        <div id="bundle"></div>
+        <div class="price-list" id="price-list"></div>
+      </div>
+    </section>
+
+    <section id="faq" class="section alt">
+      <div class="wrap faq">
+        <h2>FAQ</h2>
+        <details>
+          <summary>How do I install an app?</summary>
+          <p>Download the .dmg, open it, and drag the app into your Applications folder. Launch it from there.</p>
+        </details>
+        <details>
+          <summary>How does licensing work?</summary>
+          <p>After checkout you'll get an email with your license key and download link. Paste the key into the app's Activate window. You can use it on your own Macs.</p>
+        </details>
+        <details>
+          <summary>Can I try before I buy?</summary>
+          <p>Yes — every download works as a free trial. Buy a license when you're ready to unlock everything.</p>
+        </details>
+        <details>
+          <summary>What's your refund policy?</summary>
+          <p>If an app doesn't work for you, email us within <span data-refund>14</span> days for a full refund.</p>
+        </details>
+        <details>
+          <summary>Why does the app ask for Full Disk Access?</summary>
+          <p>Some readings (like drive SMART data) need extra permission. The app explains exactly what it needs and why, and works with reduced features if you decline.</p>
+        </details>
+        <details>
+          <summary>I lost my license key.</summary>
+          <p>Email <a data-email href="mailto:support@anothernetworkingguy.com">support@anothernetworkingguy.com</a> from the address you bought with and we'll resend it.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> <span data-brand>Another Networking Guy</span></span>
+      <nav>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms &amp; Refunds</a>
+        <a data-email href="mailto:support@anothernetworkingguy.com">Support</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="site.config.js?v=2"></script>
+  <script src="main.js?v=2"></script>
+</body>
+</html>
