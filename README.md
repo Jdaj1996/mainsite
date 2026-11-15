@@ -10,9 +10,14 @@ checkout links and download links. Each app has:
 
 | field         | what it is                                                        |
 |---------------|-------------------------------------------------------------------|
-| `icon`        | an emoji, or an image path like `img/diskpulse.png` (512×512 PNG) |
+| `icon`        | an emoji, or an image path like `img/macdiag-256.png`             |
+| `status`      | `"available"` (price + Buy/Trial) or `"coming-soon"` (Get notified) |
+| `page`        | optional link to the app's own page, e.g. `macdiag/`              |
 | `buyUrl`      | checkout link from your payment provider                          |
 | `downloadUrl` | link to the notarized `.dmg`                                      |
+
+Each app can have its own page in a folder (see `macdiag/index.html`, which reuses `styles.css`
+and adds `macdiag/macdiag.css`). The Pricing section hides itself until an app is on sale.
 
 Also review `privacy.html` and `terms.html` — they're templates.
 
