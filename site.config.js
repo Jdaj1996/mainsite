@@ -46,14 +46,14 @@ window.SITE = {
         "Rules that capture bundles automatically",
         "One-key comments on the same timeline",
         "Reversible low-level Wi-Fi controls",
-        "Signed .pkg for Mosyle, Jamf and other MDMs",
+        "One .pkg for Mosyle, Jamf and other MDMs",
       ],
       status: "coming-soon",
       page: "macdiag/",
       price: "",       // TODO: set when pricing is decided, then status: "available"
       version: "0.1",
       buyUrl: "#",      // TODO: checkout link
-      downloadUrl: "#", // TODO: link to the notarized .pkg
+      downloadUrl: "#", // TODO: link to the .pkg
     },
     {
       kind: "game",

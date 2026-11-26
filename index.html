@@ -11,7 +11,7 @@
   <meta property="og:title" content="Another Network Guy" />
   <meta property="og:description" content="Mac tools and indie games, made by one network guy." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠️</text></svg>" />
-  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 </head>
 <body data-page="home">
   <header class="nav">
@@ -34,21 +34,20 @@
         <h1 data-tagline>Mac tools and indie games, made by one network guy.</h1>
         <p class="lede">By day I keep school networks running. The rest of the time I build the tools I wish I had at work, and the games I want to play after it.</p>
         <div class="hero-cta">
-          <a href="#apps" class="btn">Mac apps</a>
-          <a href="#games" class="btn btn-ghost">Games</a>
+          <a href="#apps" class="btn btn-tools">Mac apps</a>
+          <a href="#games" class="btn btn-games">Games</a>
         </div>
         <ul class="badges">
           <li>✓ One-person studio</li>
           <li>✓ No accounts, no tracking</li>
-          <li>✓ Mac apps signed and notarized</li>
         </ul>
       </div>
     </section>
 
     <div id="work">
-      <section id="apps" class="section">
+      <section id="apps" class="section theme-tools">
         <div class="wrap">
-          <p class="eyebrow">Mac apps</p>
+          <p class="eyebrow">ls mac-apps/</p>
           <h2>Tools for the people who run networks</h2>
           <p class="section-sub">Native macOS diagnostics that record what the Mac actually saw, so a vague complaint becomes evidence you can act on.</p>
           <div class="grid" id="app-grid"></div>
@@ -59,8 +58,8 @@
               <p>Real diagnostics need things sandboxed App Store apps aren't allowed: a privileged helper, system log streams, and network commands that need root. Distributing directly lets the apps do their job.</p>
             </div>
             <div>
-              <h3>Still safe to install</h3>
-              <p>Every build is signed with a Developer ID and notarized by Apple, so macOS verifies it before it ever runs. No warnings, no right-click workarounds.</p>
+              <h3>Made for fleets</h3>
+              <p>One installer package covers the app and its helper. Push it to every Mac through Mosyle, Jamf Pro or whatever MDM you already run.</p>
             </div>
             <div>
               <h3>Your data stays local</h3>
@@ -70,7 +69,7 @@
         </div>
       </section>
 
-      <section id="games" class="section alt">
+      <section id="games" class="section theme-games">
         <div class="wrap">
           <p class="eyebrow">Games</p>
           <h2>Small games with deep systems</h2>
@@ -107,14 +106,14 @@
       <div class="wrap faq">
         <h2>FAQ</h2>
 
-        <h3 class="faq-group">Mac apps</h3>
+        <h3 class="faq-group tools">Mac apps</h3>
         <details>
           <summary>When can I get MacDiag?</summary>
           <p>MacDiag is in development. <a href="macdiag/">See what it does</a>, or <a data-email href="mailto:support@anothernetworkguy.com">email me</a> to hear when it launches.</p>
         </details>
         <details>
           <summary>How do I install an app?</summary>
-          <p>Each app ships as a signed, notarized installer package. Open it on a single Mac, or upload it to your MDM (Mosyle, Jamf Pro and others) to push it to a fleet.</p>
+          <p>Each app ships as an installer package. Open it on a single Mac, or upload it to your MDM (Mosyle, Jamf Pro and others) to push it to a fleet.</p>
         </details>
         <details data-on-sale>
           <summary>How does licensing work?</summary>
@@ -137,7 +136,7 @@
           <p>Email <a data-email href="mailto:support@anothernetworkguy.com">support@anothernetworkguy.com</a> from the address you bought with and I'll resend it.</p>
         </details>
 
-        <h3 class="faq-group">Games</h3>
+        <h3 class="faq-group games">Games</h3>
         <details>
           <summary>When can I play Pocket Realm?</summary>
           <p>Pocket Realm is in alpha. The first public release will be a free demo on itch.io with one city, Memphis, followed by a Steam page. <a href="pocketrealm/">Read more about it</a>.</p>

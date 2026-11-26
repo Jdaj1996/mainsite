@@ -12,7 +12,7 @@
   <meta property="og:description" content="See what the Mac saw when the Wi-Fi dropped." />
   <meta property="og:image" content="https://anothernetworkguy.com/img/macdiag-256.png" />
   <link rel="icon" type="image/png" href="../img/macdiag-64.png" />
-  <link rel="stylesheet" href="../styles.css?v=5" />
+  <link rel="stylesheet" href="../styles.css?v=6" />
   <link rel="stylesheet" href="macdiag.css?v=1" />
 </head>
 <body data-page="macdiag">
@@ -50,7 +50,7 @@
           <ul class="badges md-badges">
             <li>✓ macOS 15 Sequoia or later</li>
             <li>✓ Apple silicon</li>
-            <li>✓ Signed .pkg for your MDM</li>
+            <li>✓ One .pkg for your MDM</li>
           </ul>
         </div>
 
@@ -206,7 +206,7 @@
           <p class="muted">Made for schools and organizations that manage their Macs centrally on enterprise Wi-Fi.</p>
         </div>
         <ul class="md-checks">
-          <li>One signed, notarized <code>.pkg</code> installs the app and its helper — upload it to Mosyle, Jamf Pro or another MDM.</li>
+          <li>One <code>.pkg</code> installs the app and its helper — upload it to Mosyle, Jamf Pro or another MDM.</li>
           <li>Settings arrive by configuration profile: access tiers, default rules, probe targets, retention and disk quota.</li>
           <li>Pre-approve the helper with a managed background-items profile so users can't switch it off.</li>
           <li>Rules are stored as files, so the same set can be shared and pushed to every Mac.</li>
@@ -256,7 +256,7 @@
         </details>
         <details>
           <summary>Why isn't it in the Mac App Store?</summary>
-          <p>App Store apps are sandboxed, which blocks the privileged helper, system log streaming and the network commands MacDiag relies on. It's distributed directly as a Developer ID–signed, Apple-notarized package instead.</p>
+          <p>App Store apps are sandboxed, which blocks the privileged helper, system log streaming and the network commands MacDiag relies on. It's distributed directly as an installer package instead.</p>
         </details>
         <details>
           <summary>Does it work on Intel Macs or older macOS?</summary>

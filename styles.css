@@ -173,3 +173,94 @@ p { margin: 0 0 1em; }
 .about p:last-child { margin-bottom: 0; }
 .faq-group { font-family: var(--mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin: 32px 0 4px; }
 .faq h2 + .faq-group { margin-top: 8px; }
+
+/* ─────────────────────────────────────────────────────────────
+   Themes: one look for the Mac admin tools, one for the games.
+   A theme only resets the shared variables, so cards, buttons,
+   pills and FAQ items inside it restyle themselves.
+   ───────────────────────────────────────────────────────────── */
+
+/* Tools: dark console, cool accents, square edges */
+.theme-tools {
+  --bg: #0b0f14;
+  --bg-alt: #111821;
+  --surface: #121a23;
+  --text: #e3e9ef;
+  --muted: #8d9aa8;
+  --border: #223040;
+  --accent: #4cc2ff;
+  --accent-text: #04121c;
+  --good: #3ddc84;
+  --radius: 8px;
+  --shadow: 0 0 0 1px #ffffff06, 0 8px 24px rgba(0, 0, 0, 0.35);
+  background:
+    linear-gradient(#ffffff07 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, #ffffff07 1px, transparent 1px) 0 0 / 32px 32px,
+    var(--bg);
+  color: var(--text);
+}
+.theme-tools .eyebrow::before { content: "$ "; color: var(--good); }
+.theme-tools h2 { font-family: var(--mono); font-weight: 600; letter-spacing: -0.03em; }
+.theme-tools .card { border-color: var(--border); }
+.theme-tools .card:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
+.theme-tools .features li::before { content: "›"; font-family: var(--mono); }
+.theme-tools .pill { color: var(--good); background: color-mix(in srgb, var(--good) 12%, transparent); }
+.theme-tools .pill::before { content: "● "; }
+.theme-tools .app-icon { background: #0b0f14; }
+.theme-tools .trust h3 { font-family: var(--mono); font-size: 1rem; }
+
+/* Games: warm parchment, gold accents, soft round edges, book-style headings */
+.theme-games {
+  --bg: #f5e8cf;
+  --bg-alt: #efdcb8;
+  --surface: #fffaf0;
+  --text: #3a2a1c;
+  --muted: #7a6450;
+  --border: #e2cba3;
+  --accent: #b9771b;
+  --accent-text: #fffaf0;
+  --good: #6f9a3b;
+  --radius: 22px;
+  --shadow: 0 2px 0 #e2cba3, 0 10px 30px rgba(122, 82, 30, 0.12);
+  --display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  background:
+    radial-gradient(circle at 1px 1px, #b9771b14 1px, transparent 0) 0 0 / 22px 22px,
+    var(--bg);
+  color: var(--text);
+}
+@media (prefers-color-scheme: dark) {
+  .theme-games {
+    --bg: #1d160f;
+    --bg-alt: #261d14;
+    --surface: #2a2016;
+    --text: #f3e6cf;
+    --muted: #c3ad8f;
+    --border: #3e3021;
+    --accent: #f0bd55;
+    --accent-text: #1d160f;
+    --good: #a7cf6a;
+    --shadow: 0 2px 0 #00000040, 0 10px 30px rgba(0, 0, 0, 0.35);
+    background:
+      radial-gradient(circle at 1px 1px, #f0bd5512 1px, transparent 0) 0 0 / 22px 22px,
+      var(--bg);
+  }
+}
+.theme-games h1, .theme-games h2, .theme-games h3 { font-family: var(--display); letter-spacing: -0.01em; }
+.theme-games h2 { font-weight: 700; }
+.theme-games .eyebrow { font-family: var(--display); font-style: italic; text-transform: none; letter-spacing: 0; font-size: 1rem; }
+.theme-games .eyebrow::before { content: "✦ "; font-style: normal; }
+.theme-games .card { transition: transform 0.2s, box-shadow 0.2s; }
+.theme-games .card:hover { transform: translateY(-3px) rotate(-0.3deg); }
+.theme-games .features li::before { content: "✦"; color: var(--accent); }
+.theme-games .app-icon { border-radius: 18px; }
+.theme-games .card-foot, .theme-games .apps-trust { border-top-style: dashed; }
+.theme-games .meta { font-family: var(--display); font-style: italic; font-size: 0.85rem; }
+
+/* Hero buttons that preview each side */
+.btn-tools { background: #0b0f14; border-color: #223040; color: #4cc2ff; font-family: var(--mono); border-radius: 8px; }
+.btn-games { background: #b9771b; border-color: #b9771b; color: #fffaf0; font-family: "Iowan Old Style", Palatino, Georgia, serif; font-size: 1.05rem; border-radius: 22px; }
+@media (prefers-color-scheme: dark) { .btn-games { background: #f0bd55; border-color: #f0bd55; color: #1d160f; } }
+.theme-tools .eyebrow { text-transform: none; letter-spacing: 0.02em; font-size: 0.85rem; }
+.faq-group.tools { color: #2a9fd8; }
+.faq-group.games { color: #b9771b; font-family: "Iowan Old Style", Palatino, Georgia, serif; font-style: italic; text-transform: none; letter-spacing: 0; font-size: 1rem; }
+@media (prefers-color-scheme: dark) { .faq-group.tools { color: #4cc2ff; } .faq-group.games { color: #f0bd55; } }
