@@ -3,20 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Another Networking Guy — Mac diagnostic apps</title>
-  <meta name="description" content="Diagnostic tools for Macs on enterprise Wi-Fi, starting with MacDiag. Signed, notarized, and deployable through your MDM." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <title>Another Network Guy — Mac tools and indie games</title>
+  <meta name="description" content="A one-person studio making native Mac tools for the people who run networks, and cozy indie games. Home of MacDiag and Pocket Realm." />
+  <link rel="canonical" href="https://anothernetworkguy.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://anothernetworkguy.com/" />
+  <meta property="og:title" content="Another Network Guy" />
+  <meta property="og:description" content="Mac tools and indie games, made by one network guy." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠️</text></svg>" />
+  <link rel="stylesheet" href="styles.css?v=5" />
 </head>
 <body data-page="home">
   <header class="nav">
     <div class="wrap nav-inner">
-      <a href="#" class="logo" data-brand>Another Networking Guy</a>
+      <a href="#" class="logo" data-brand>Another Network Guy</a>
       <nav>
-        <a href="#apps">Apps</a>
-        <a href="#pricing">Pricing</a>
+        <a href="#apps">Mac apps</a>
+        <a href="#games">Games</a>
+        <a href="#about">About</a>
         <a href="#faq">FAQ</a>
-        <a href="#apps" class="btn btn-small">Get the apps</a>
+        <a href="#work" class="btn btn-small">See the work</a>
       </nav>
     </div>
   </header>
@@ -24,61 +30,87 @@
   <main>
     <section class="hero">
       <div class="wrap">
-        <p class="eyebrow">Diagnostic tools for macOS</p>
-        <h1 data-tagline>Diagnostics for the Macs on your network.</h1>
-        <p class="lede">Native macOS tools for the people who run school and business networks. They record what the Mac actually saw, so a vague complaint becomes evidence you can act on.</p>
+        <p class="eyebrow">Independent studio</p>
+        <h1 data-tagline>Mac tools and indie games, made by one network guy.</h1>
+        <p class="lede">By day I keep school networks running. The rest of the time I build the tools I wish I had at work, and the games I want to play after it.</p>
         <div class="hero-cta">
-          <a href="macdiag/" class="btn">Meet MacDiag</a>
-          <a href="#apps" class="btn btn-ghost">All apps</a>
+          <a href="#apps" class="btn">Mac apps</a>
+          <a href="#games" class="btn btn-ghost">Games</a>
         </div>
         <ul class="badges">
-          <li>✓ Notarized by Apple</li>
-          <li data-arch>✓ Apple silicon</li>
-          <li data-minos>✓ macOS 15 Sequoia or later</li>
+          <li>✓ One-person studio</li>
+          <li>✓ No accounts, no tracking</li>
+          <li>✓ Mac apps signed and notarized</li>
         </ul>
       </div>
     </section>
 
-    <section id="apps" class="section">
-      <div class="wrap">
-        <h2>The apps</h2>
-        <p class="section-sub">Each app does one job well. More are on the way.</p>
-        <div class="grid" id="app-grid"></div>
-      </div>
-    </section>
+    <div id="work">
+      <section id="apps" class="section">
+        <div class="wrap">
+          <p class="eyebrow">Mac apps</p>
+          <h2>Tools for the people who run networks</h2>
+          <p class="section-sub">Native macOS diagnostics that record what the Mac actually saw, so a vague complaint becomes evidence you can act on.</p>
+          <div class="grid" id="app-grid"></div>
 
-    <section class="section alt">
-      <div class="wrap trust">
-        <div>
-          <h3>Why not the App Store?</h3>
-          <p>Real diagnostics need things sandboxed App Store apps aren't allowed: a privileged helper, system log streams, and network commands that need root. Distributing directly lets the apps do their job.</p>
+          <div class="trust apps-trust">
+            <div>
+              <h3>Why not the App Store?</h3>
+              <p>Real diagnostics need things sandboxed App Store apps aren't allowed: a privileged helper, system log streams, and network commands that need root. Distributing directly lets the apps do their job.</p>
+            </div>
+            <div>
+              <h3>Still safe to install</h3>
+              <p>Every build is signed with a Developer ID and notarized by Apple, so macOS verifies it before it ever runs. No warnings, no right-click workarounds.</p>
+            </div>
+            <div>
+              <h3>Your data stays local</h3>
+              <p>Nothing is uploaded. Logs and evidence bundles are written on the Mac and only leave it when someone exports them.</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <h3>Still safe to install</h3>
-          <p>Every build is signed with a Developer ID and notarized by Apple, so macOS verifies it before it ever runs. No warnings, no right-click workarounds.</p>
+      </section>
+
+      <section id="games" class="section alt">
+        <div class="wrap">
+          <p class="eyebrow">Games</p>
+          <h2>Small games with deep systems</h2>
+          <p class="section-sub">Cozy on the surface, with enough strategy underneath to keep you thinking about the next run. Sold through itch.io and Steam.</p>
+          <div class="grid" id="game-grid"></div>
         </div>
-        <div>
-          <h3>Your data stays local</h3>
-          <p>Nothing is uploaded. Logs and evidence bundles are written on the Mac and only leave it when someone exports them.</p>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <section id="pricing" class="section">
       <div class="wrap">
-        <h2>Pricing</h2>
+        <h2>Mac app pricing</h2>
         <p class="section-sub">One-time purchase. Free updates within the major version.</p>
         <div id="bundle"></div>
         <div class="price-list" id="price-list"></div>
       </div>
     </section>
 
+    <section id="about" class="section">
+      <div class="wrap about">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>One person, two kinds of projects</h2>
+        </div>
+        <div>
+          <p>Another Network Guy is me: an IT administrator who spends the workday with switches, access points, MDM and a lot of Macs. The apps come straight out of that job. When a problem keeps coming back and no tool answers it, I build one.</p>
+          <p>The games come from the other side of the desk. I like city builders and strategy games with real systems in them, and I'm making the kind I'd want to sink an evening into.</p>
+          <p>Everything here is made by one person, so it ships when it's ready. If you want to hear when something launches, <a data-email href="mailto:support@anothernetworkguy.com">send me an email</a>.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="faq" class="section alt">
       <div class="wrap faq">
         <h2>FAQ</h2>
+
+        <h3 class="faq-group">Mac apps</h3>
         <details>
           <summary>When can I get MacDiag?</summary>
-          <p>MacDiag is in development. <a href="macdiag/">See what it does</a>, or <a data-email href="mailto:support@anothernetworkguy.com">email us</a> to hear when it launches.</p>
+          <p>MacDiag is in development. <a href="macdiag/">See what it does</a>, or <a data-email href="mailto:support@anothernetworkguy.com">email me</a> to hear when it launches.</p>
         </details>
         <details>
           <summary>How do I install an app?</summary>
@@ -94,7 +126,7 @@
         </details>
         <details data-on-sale>
           <summary>What's your refund policy?</summary>
-          <p>If an app doesn't work for you, email us within <span data-refund>14</span> days for a full refund.</p>
+          <p>If an app doesn't work for you, email within <span data-refund>14</span> days for a full refund.</p>
         </details>
         <details>
           <summary>Why does an app ask for an administrator password?</summary>
@@ -102,7 +134,21 @@
         </details>
         <details data-on-sale>
           <summary>I lost my license key.</summary>
-          <p>Email <a data-email href="mailto:support@anothernetworkguy.com">support@anothernetworkguy.com</a> from the address you bought with and we'll resend it.</p>
+          <p>Email <a data-email href="mailto:support@anothernetworkguy.com">support@anothernetworkguy.com</a> from the address you bought with and I'll resend it.</p>
+        </details>
+
+        <h3 class="faq-group">Games</h3>
+        <details>
+          <summary>When can I play Pocket Realm?</summary>
+          <p>Pocket Realm is in alpha. The first public release will be a free demo on itch.io with one city, Memphis, followed by a Steam page. <a href="pocketrealm/">Read more about it</a>.</p>
+        </details>
+        <details>
+          <summary>Where are the games sold?</summary>
+          <p>Through itch.io and Steam, not on this site. Purchases, refunds and downloads go through those stores and follow their terms.</p>
+        </details>
+        <details>
+          <summary>What platforms will the games run on?</summary>
+          <p>Pocket Realm is built in Godot and is planned for Windows, macOS and Linux. Each game's page lists its platforms.</p>
         </details>
       </div>
     </section>
@@ -110,16 +156,16 @@
 
   <footer class="footer">
     <div class="wrap footer-inner">
-      <span>© <span id="year"></span> <span data-brand>Another Networking Guy</span></span>
+      <span>© <span id="year"></span> <span data-brand>Another Network Guy</span></span>
       <nav>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
-        <a data-email href="mailto:support@anothernetworkguy.com">Support</a>
+        <a data-email href="mailto:support@anothernetworkguy.com">Contact</a>
       </nav>
     </div>
   </footer>
 
-  <script src="site.config.js?v=4"></script>
-  <script src="main.js?v=4"></script>
+  <script src="site.config.js?v=5"></script>
+  <script src="main.js?v=5"></script>
 </body>
 </html>

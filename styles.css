@@ -164,3 +164,12 @@ p { margin: 0 0 1em; }
 .grid.single { grid-template-columns: 1fr; max-width: 820px; }
 .grid.single .features { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
 .grid.single .card-head .app-icon { width: 72px; height: 72px; border-radius: 16px; }
+
+/* Studio home: sections for apps and games */
+.apps-trust { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--border); }
+.about { display: grid; gap: 24px 48px; }
+@media (min-width: 800px) { .about { grid-template-columns: 1fr 1.6fr; } }
+.about p { color: var(--muted); }
+.about p:last-child { margin-bottom: 0; }
+.faq-group { font-family: var(--mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin: 32px 0 4px; }
+.faq h2 + .faq-group { margin-top: 8px; }

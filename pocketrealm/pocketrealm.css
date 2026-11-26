@@ -1,0 +1,87 @@
+/* Pocket Realm game page — builds on ../styles.css */
+:root {
+  --pr-sand: #e9c98f;
+  --pr-gold: #d9a43b;
+  --pr-nile: #3f7fb8;
+  --pr-ink: #3a2a1c;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --pr-sand: #3a2f1f; --pr-gold: #f0bd55; --pr-nile: #6aa6dc; --pr-ink: #f3e6cf; }
+}
+
+.skip {
+  position: absolute; left: 16px; top: -48px; z-index: 20;
+  background: var(--surface); color: var(--text); padding: 8px 12px;
+  border-radius: 8px; border: 1px solid var(--border);
+}
+.skip:focus { top: 12px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+body[data-page="pocketrealm"] { --accent: #b9771b; }
+@media (prefers-color-scheme: dark) { body[data-page="pocketrealm"] { --accent: #f0bd55; --accent-text: #1a1208; } }
+
+/* Hero */
+.pr-hero {
+  padding: 64px 0 72px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--pr-sand) 45%, var(--bg)) 0%, var(--bg) 100%);
+}
+.pr-hero-grid { display: grid; gap: 40px; align-items: center; }
+@media (min-width: 960px) { .pr-hero-grid { grid-template-columns: 1fr 1.25fr; } }
+.pr-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; flex-wrap: wrap; }
+.pr-brand img { width: 56px; height: 56px; border-radius: 13px; border: 1px solid var(--border); }
+.pr-brand > span:not(.pill) { font-weight: 700; font-size: 1.25rem; }
+.pr-hero h1 { font-size: clamp(2rem, 5vw, 3.1rem); max-width: 17ch; }
+.pr-hero .lede { margin: 0 0 28px; max-width: 54ch; }
+.pr-hero .hero-cta { justify-content: flex-start; }
+.pr-hero .badges { justify-content: flex-start; margin-top: 28px; }
+
+.pr-shot { margin: 0; min-width: 0; }
+.pr-shot img {
+  display: block; width: 100%; height: auto; border-radius: 12px;
+  border: 1px solid var(--border); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+}
+.pr-shot figcaption { margin-top: 10px; font-size: 0.82rem; color: var(--muted); }
+
+/* Loop */
+.pr-loop { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); counter-reset: step; }
+.pr-loop li {
+  position: relative; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 22px 22px 20px 22px; color: var(--muted); font-size: 0.96rem;
+}
+.pr-loop li::before {
+  counter-increment: step; content: counter(step);
+  display: grid; place-items: center; width: 30px; height: 30px; margin-bottom: 12px; border-radius: 50%;
+  font: 700 0.9rem var(--mono); color: var(--accent-text); background: var(--accent);
+}
+.pr-loop b { display: block; color: var(--text); margin-bottom: 4px; font-size: 1.02rem; }
+
+/* Features */
+.pr-features { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.pr-features .card p { color: var(--muted); margin: 0; font-size: 0.97rem; }
+
+/* Tiers */
+.pr-tiers { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
+.pr-tiers li { border-left: 4px solid var(--accent); background: var(--surface); border-radius: 0 10px 10px 0; padding: 14px 16px; color: var(--muted); font-size: 0.94rem; }
+.pr-tiers b { display: block; color: var(--text); }
+
+/* Split */
+.pr-split { display: grid; gap: 32px; align-items: start; }
+@media (min-width: 860px) { .pr-split { grid-template-columns: 1fr 1.2fr; gap: 56px; } }
+.pr-flood {
+  margin: 0; border-radius: var(--radius); padding: 24px; color: var(--muted);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--pr-nile) 30%, var(--surface)) 0 28%, color-mix(in srgb, var(--pr-sand) 60%, var(--surface)) 28% 100%);
+  border: 1px solid var(--border);
+}
+.pr-flood ol { margin: 0; padding-left: 1.2em; display: grid; gap: 10px; color: var(--text); }
+
+/* Roadmap */
+.pr-roadmap { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+.pr-roadmap li { border: 1px dashed var(--border); border-radius: var(--radius); padding: 18px 20px; color: var(--muted); font-size: 0.95rem; }
+.pr-roadmap li.done { border-style: solid; background: var(--surface); }
+.pr-roadmap b { display: block; color: var(--text); margin-bottom: 4px; font-size: 1rem; }
+
+/* CTA */
+.pr-cta { text-align: center; }
+.pr-cta img { margin: 0 auto 16px; display: block; border-radius: 16px; }
+.pr-cta p { max-width: 52ch; margin: 0 auto 24px; }
+.pr-cta .hero-cta { justify-content: center; }
